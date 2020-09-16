@@ -1,14 +1,11 @@
 /**
-* print_string - print a string
+* main - print a string
+* Return: 0 if successful
 */
 #include <stdio.h>
-#include <string.h>
 
-print_string(void)
+int main(void)
 {
-char string;
-
-strcpy(str, "Programming is like building a multilingual puzzle\n");
-puts(string);
+puts("Programming is like building a multilingual puzzle\n");
 return (0);
 }
