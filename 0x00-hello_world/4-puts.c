@@ -1,11 +1,12 @@
+#include <stdio.h>
+
 /**
-* main - print a string
+* main - print string
 * Return: 0 if successful
 */
-#include <stdio.h>
 
 int main(void)
 {
-puts("Programming is like building a multilingual puzzle");
+puts("Programming is like building a multilingual puzzle\n");
 return (0);
 }
