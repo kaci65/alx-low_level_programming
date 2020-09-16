@@ -6,15 +6,15 @@
 
 int main(void)
 {
-int i;
-double d;
-char c;
-float f;
+int intType;
+double doubleType;
+char charType;
+float floatType;
 
-printf("The size of int: %lu.\n", (unsigned long)sizeof(i));
-printf("The size of a double is: %lu.\n", (unsigned long)sizeof(d));
-printf("The size of char is: %lu.\n", (unsigned long)sizeof(c));
-printf("The size of float is: %lu.\n", (unsigned long)sizeof(f));
+printf("The size of int: %ld bytes\n", sizeof(intType));
+printf("The size of a double is: %ld bytes\n", sizeof(doubleType));
+printf("The size of char is: %ld byte\n", sizeof(charType));
+printf("The size of float is: %ld bytes\n", sizeof(floatType));
 
 return (0);
 }
