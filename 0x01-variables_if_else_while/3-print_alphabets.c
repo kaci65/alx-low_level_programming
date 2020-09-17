@@ -5,16 +5,17 @@
 */
 int main(void)
 {
-	char ch;
+	char low;
+	char up;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	for (low = 'a'; low <= 'z'; low++)
 	{
-		putchar(ch);
+		putchar(low);
 	}
 	/* print uppercase letters */
-		for (ch = 'A'; ch <= 'Z'; ch++)
+		for (up = 'A'; up <= 'Z'; up++)
 		{
-			putchar(ch);
+			putchar(up);
 			putchar('\n');
 		}
 
