@@ -11,11 +11,12 @@ int main(void)
 	{
 		putchar(ch);
 	}
-	for (ch = 'A'; ch <= 'Z'; ch++)
-	{
-		putchar(ch);
-		putchar('\n');
-	}
+	/* print uppercase letters */
+		for (ch = 'A'; ch <= 'Z'; ch++)
+		{
+			putchar(ch);
+			putchar('\n');
+		}
 
 	return (0);
 }
