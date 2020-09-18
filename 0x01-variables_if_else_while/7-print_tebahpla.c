@@ -5,11 +5,11 @@
 */
 int main(void)
 {
-	char ch;
+	char reverse;
 
-	for (ch = 'a'; ch <= 'z'; ch--)
+	for (reverse = 'z'; reverse <= 'a'; reverse++)
 	{
-		putchar(ch);
+		putchar(reverse);
 	}
 	putchar('\n');
 
