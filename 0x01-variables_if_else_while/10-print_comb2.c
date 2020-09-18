@@ -5,20 +5,24 @@
 */
 int main(void)
 {
-	int number;
+	int number1;
+	int number2;
 
-	for (number = 0; number < 99; number++)
+	for (number1 = 0; number1 < 99; number1++)
 	{
-		putchar(number + '0');
+		for (number2 = 0; number2 < 99; number2++)
+		{
+			putchar((number1 + '0') && (number2 + '0'));
 
 	/* print uppercase letters */
-		if (number != 99)
-		{
-			putchar(',');
-			putchar(' ');
+			if (number1 != 99 && number2 != 99)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
-		putchar('\n');
+	putchar('\n');
 
 	return (0);
 }
