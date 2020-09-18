@@ -9,14 +9,15 @@ int main(void)
 
 	for (number = 0; number < 99; number++)
 	{
-		putchar("%.2d", number);
-	}
+		putchar(number + '0');
+
 	/* print uppercase letters */
 		if (number != 99)
 		{
 			putchar(',');
 			putchar(' ');
 		}
+	}
 		putchar('\n');
 
 	return (0);
