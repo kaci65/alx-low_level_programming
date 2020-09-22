@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
-* print_alphabet - alphabet in lowercase ten times
-* Return: 0 if successful
+* print_alphabet_x10 - alphabet in lowercase ten times
+* Return: void
 */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	int i;
 	char ch;
@@ -15,6 +15,6 @@ void print_alphabet(void)
 		{
 			_putchar(ch);
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
