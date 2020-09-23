@@ -3,12 +3,12 @@
  *add - adds two integers and returns the result
  *@num1: integer 1
  *@num2: integer 2
- *Return: integer of sum
+ *Return: integer of result
  */
 int add(int num1, int num2)
 {
-	int sum;
+	int result;
 
-	sum = num1 + num2;
-	return (sum);
+	result = num1 + num2;
+	return (result);
 }
