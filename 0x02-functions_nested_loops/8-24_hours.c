@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*jack_bauer - print every minute starting of the day
+*jack_bauer - print every minute of the day
 *Return: Void
 */
 void jack_bauer(void)
