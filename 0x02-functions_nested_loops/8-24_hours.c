@@ -27,7 +27,7 @@ void jack_bauer(void)
 						_putchar('0' + d);
 						_putchar('\n');
 					}
-					elsef (a == 2 && b <= 3)
+					else if (a == 2 && b <= 3)
 					{
 						_putchar('0' + a);
 						_putchar('0' + b);
