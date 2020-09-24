@@ -16,7 +16,7 @@ int main(void)
 		{
 			printf("FizzBuzz");
 		}
-		else if (i != 100)
+		if (i != 100)
 		{
 			putchar(32);
 		}
