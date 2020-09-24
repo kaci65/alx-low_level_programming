@@ -16,10 +16,6 @@ int main(void)
 		{
 			printf("%s", "FizzBuzz");
 		}
-		if (i != 100)
-		{
-			putchar(32);
-		}
 		else if (i % 3 == 0)
 		{
 			printf("%s", "Fizz");
@@ -31,6 +27,10 @@ int main(void)
 		else
 		{
 			printf("%d", i);
+		}
+		if (i != 100)
+		{
+			putchar(32);
 		}
 	}
 	printf("\n");
