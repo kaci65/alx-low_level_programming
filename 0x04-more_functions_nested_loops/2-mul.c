@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  *mul - multiplies two integers
- *@i: integer
- *@j: integer
+ *@a: integer
+ *@b: integer
  *Return: result of multiplication
  */
 int mul(int a, int b)
