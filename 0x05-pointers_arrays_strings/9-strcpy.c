@@ -3,12 +3,19 @@
 
 /**
  * _strcpy - copies the string from pointer src to pointer dest
- * @dest: pointer char 1
- * @src: pointer char 2
+ * @dest: have src contents
+ * @src: copy contents to dest
  * Return: Pointer to dest
  */
 char *_strcpy(char *dest, char *src)
 {
-	strcpy(*dest, *src);
-	putchar(dest);
+	int i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
 }
