@@ -13,5 +13,6 @@ void print_number(int n)
 	{
 		_putchar(i);
 	}
+	_putchar('\n');
 }
 
