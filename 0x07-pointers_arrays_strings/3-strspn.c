@@ -13,7 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	int index;
 
 	c = 0;
-	while (s++)
+	while (*s)
 	{
 		for (index = 0; accept[index]; index++)
 		{
@@ -27,6 +27,7 @@ unsigned int _strspn(char *s, char *accept)
 				return (c);
 			}
 		}
+		s++;
 	}
 	return (c);
 
