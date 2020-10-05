@@ -1,40 +1,31 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
- * *cap_string - capitalizes all words of a string
- * @s: string to review
- * Return: char
+ * cap_string - capitalizes all word of a string
+ * @str: pointer to string variable
+ * Return: str
  */
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
 	int i;
-	int j;
 
-	i = 0;
-	while (s[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		i++;
-	}
-
-	j = 0;
-	while (j < i)
-	{
-		if (j == 0 && s[j] >= 'a' && s[j] <= 'z')
+		if (i == 0 && str[i] >= 97 && str[i] <= 122)
 		{
-			s[j] = s[j] - 32;
+			str[i] -= 32;
 		}
-
-		if ((s[j] == ',' || s[j] == ';' || s[j] == '.'
-		|| s[j] == '!' || s[j] == '?' || s[j] == '"'
-		|| s[j] == '(' || s[j] == ')' || s[j] == '{'
-		|| s[j] == '}' || s[j] == ' ' || s[j] == '\t'
-		|| s[j] == '\n') && (s[j + 1] >= 'a' && s[j + 1] <= 'z'))
+		if (str[i] >= 97 && str[i] <= 122
+		 && (str[i - 1] == 32 || str[i - 1] == ','
+		 || str[i - 1] == ';' || str[i - 1] == '.'
+		 || str[i - 1] == '!' || str[i - 1] == '?'
+		 || str[i - 1] == '"' || str[i - 1] == '('
+		 || str[i - 1] == ')' || str[i - 1] == '{'
+		 || str[i - 1] == '}' || str[i - 1] == '\n'
+		 || str[i - 1] == '\t'))
 		{
-			s[j + 1] = s[j + 1] - 32;
+			str[i] -= 32;
 		}
-	j++;
 	}
-	return (s);
+	return (str);
 }
