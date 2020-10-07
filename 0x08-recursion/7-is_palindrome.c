@@ -7,7 +7,11 @@
  */
 int is_palindrome(char *s)
 {
-	return (find_palindrome(s, 0));
+	int index = 0;
+
+	index = str_length(s);
+
+	return (find_palindrome(s, index));
 }
 
 /**
@@ -18,39 +22,36 @@ int is_palindrome(char *s)
 
 int str_length(char *s)
 {
-	int length = 0;
+	int len = 0;
 
-	while (s[length] != '\0')
+	while (*(s + len))
 	{
-		length++;
+		len++;
+		len = len + str_length(s + len);
 	}
-	return (length);
+	return (len);
 }
 
 /**
  * find_palindrome - recursion function to check palindrome
  * @s: string to check
- * @begin: start of string
- * @end: end of string
+ * @index: iterate through string using @index
  * Return: Integer
  */
 
-int find_palindrome(char *s, int begin, int end)
+int find_palindrome(char *s, int index)
 {
-	if (s[begin] != s[end])
+	int len;
+
+	len = str_length(s) - 1;
+
+	if (s[index] != s[len - index])
 	{
 		return (0);
 	}
-	if (length == 0)
+	if (*s == '\0')
 	{
 		return (1);
 	}
-	if (s[begin] == s[end])
-	{
-		return (1);
-	}
-	if (s < end + 1)
-	{
-		return (find_palindrome(s, begin + 1, end - 1));
-	}
+	return (find_palindrome(s, (index + 1)));
 }
