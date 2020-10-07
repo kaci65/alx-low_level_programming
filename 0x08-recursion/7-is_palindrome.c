@@ -51,7 +51,7 @@ int find_palindrome(char *s, int index)
 	}
 	else
 	{
-		(find_palindrome(s, (index + 1)));
+		find_palindrome(s, (index + 1));
 		return (1);
 	}
 }
