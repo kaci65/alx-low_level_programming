@@ -19,13 +19,17 @@ int is_prime_number(int n)
 
 int find_prime(int num1, int i)
 {
+	if (num1 <= 1)
+	{
+		return (0);
+	}
+	if ((num1 % i == 0) && i < num1)
+	{
+		return (0);
+	}
 	if (num1 == i)
 	{
 		return (1);
-	}
-	if (num1 % i == 0)
-	{
-		return (0);
 	}
 	return (find_prime(num1, (i + 1)));
 }
