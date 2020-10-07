@@ -27,7 +27,7 @@ int find_prime(int i, int num1)
 	{
 		return (0);
 	}
-	if (num1 == i)
+	if (i == num1)
 	{
 		return (1);
 	}
