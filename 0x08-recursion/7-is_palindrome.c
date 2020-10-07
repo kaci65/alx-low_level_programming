@@ -41,11 +41,7 @@ int str_length(char *s)
 
 int find_palindrome(char *s, int index)
 {
-	int len;
-
-	len = str_length(s) - 1;
-
-	if (s[index] != s[len - index])
+	if (*s != *(s + index - 1))
 	{
 		return (0);
 	}
@@ -53,5 +49,9 @@ int find_palindrome(char *s, int index)
 	{
 		return (1);
 	}
-	return (find_palindrome(s, (index + 1)));
+	else
+	{
+		(find_palindrome(s, (index + 1)));
+		return (1);
+	}
 }
