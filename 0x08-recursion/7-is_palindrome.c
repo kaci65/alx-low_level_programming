@@ -7,11 +7,11 @@
  */
 int is_palindrome(char *s)
 {
-	int index = 0;
+	int length;
 
-	index = str_length(s);
+	length = str_length(s);
 
-	return (find_palindrome(s, index));
+	return (find_palindrome(s, length));
 }
 
 /**
@@ -22,14 +22,13 @@ int is_palindrome(char *s)
 
 int str_length(char *s)
 {
-	int len = 0;
-
-	while (*(s + len))
+	if (*s == '\0')
 	{
-		len++;
-		len = len + str_length(s + len);
+		return (0);
 	}
-	return (len);
+	else
+		return (1 + str_length(s + 1));
+	}
 }
 
 /**
