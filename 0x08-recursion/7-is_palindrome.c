@@ -28,7 +28,6 @@ int str_length(char *s)
 	}
 	else
 		return (1 + str_length(s + 1));
-	}
 }
 
 /**
