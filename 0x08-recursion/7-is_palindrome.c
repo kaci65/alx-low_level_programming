@@ -12,7 +12,9 @@ int is_palindrome(char *s)
 	length = str_length(s);
 
 	if (!(*s))
+	{
 		return (1);
+	}
 
 	return (find_palindrome(s, length));
 }
