@@ -11,11 +11,6 @@ int is_palindrome(char *s)
 
 	length = str_length(s);
 
-	if (!(*s))
-	{
-		return (1);
-	}
-
 	return (find_palindrome(s, length));
 }
 
@@ -49,6 +44,10 @@ int find_palindrome(char *s, int index)
 		return (0);
 	}
 	if (*s == '\0')
+	{
+		return (1);
+	}
+	if (!(*s))
 	{
 		return (1);
 	}
