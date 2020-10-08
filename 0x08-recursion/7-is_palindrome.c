@@ -39,15 +39,15 @@ int str_length(char *s)
 
 int find_palindrome(char *s, int index)
 {
+	if (!(*s))
+	{
+		return (1);
+	}
 	if (*s != *(s + index - 1))
 	{
 		return (0);
 	}
 	if (*s == '\0')
-	{
-		return (1);
-	}
-	if (!(*s))
 	{
 		return (1);
 	}
