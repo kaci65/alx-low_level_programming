@@ -11,7 +11,8 @@ void print_all(const char * const format, ...);
 /**
  * struct prints - Defines a printer to data types
  * @notation: type of data type
- * @print_dType: pointer to function that prints data types according to notation
+ * @print_dType: pointer to function that prints data types
+ * according to their notation
  */
 typedef struct prints
 {
