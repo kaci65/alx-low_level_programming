@@ -51,7 +51,7 @@ void print_string(va_list argptr)
 	if (str == NULL)
 	{
 		printf("(nil)");
-		printf("null");
+		return;
 	}
 	printf("%s", str);
 }
