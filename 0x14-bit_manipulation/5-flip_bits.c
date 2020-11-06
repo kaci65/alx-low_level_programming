@@ -9,8 +9,8 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int different;
-	int numbits = 0;
+	unsigned int long different;
+	unsigned int numbits = 0;
 
 	different = n ^ m;
 	/* result of bitwise XOR is 1 if two bits are different */
