@@ -9,12 +9,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int j;
+	unsigned int val_bit;
 
 	if (index > ((sizeof(n) * 8) - 1))
 		return (-1);
-	for (j = 0; j < index; j++)
-		n = n >> 1;
+	val_bit = ((n >> index) & 1);
+	/* right shift n , index times and perform bitwise AND with 1 */
 
-	return (n & 1);
+	return (val_bit);
 }
