@@ -10,12 +10,15 @@
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	int res;
+
+	if (index > ((sizeof(unsigned long int) * 8) - 1))
+		return (-1);
 	/**
 	 * if bit at index is 1, then set it to 0
 	 * if it's 0, leave it unchanged
 	 * use bitwise AND to clear bit (AND of 2 bits is 0 if any is 0)
 	 */
-	res = (1 << index);
+	res = 1 << index;
 	*n = (*n & (~res));
 	/**
 	 * shift 1 to the index position
