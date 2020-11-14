@@ -25,46 +25,33 @@ int main(int argc, char *argv[])
  * @file_to: destination file where content is being copied to
  * Return: Nothing
  */
-void filecopy(char *file_from, char *file_to)
+void filecopy(const char *file_from, const char *file_to)
 {
-	int fp_from, fp_to, f_read, f_write;
+	int fp_from, fp_to, f_read, f_write, close_f1, close_f2;
 	char buff[BUFFSIZE];
 
 	fp_from = open(file_from, O_RDONLY);
-	if (fp_from < 0)
+	fp_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((f_read = read(fp_from, buff, BUFFSIZE)) > 0)
+	{
+		f_write = write(fp_to, buff, f_read);
+		if (f_write != f_read || fp_to < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+			exit(99);
+		}
+	}
+	if (f_read < 0 || fp_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 
-	fp_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fp_to < 0)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
-		exit(99);
-
-	while (f_read)
+	close_f1 = close(fp_from);
+	close_f2 = close(fp_to);
+	if ((close_f1 < 0) && (close_f2 < 0))
 	{
-		f_read = read(fp_from, buff, BUFFSIZE);
-		if (f_read < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
-		if (f_read > 0)
-		{
-			f_write = write(fp_to, buff, f_read);
-			if (f_write < 0)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
-				exit(99);
-			}
-		}
-	}
-	if (close(fp_from) < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fp_from);
 		exit(100);
-
-	if (close(fp_to) < 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fp_to);
-		exit(100);
+	}
 }
