@@ -22,6 +22,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	if (*head == NULL)
 	{
+		new_end->prev = NULL;
 		*head = new_end;
 	}
 	else
@@ -32,6 +33,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 			tmp = tmp->next;
 		}
 		tmp->next = new_end;
+		new_end->prev = tmp;
 	}
 	return (new_end);
 }
